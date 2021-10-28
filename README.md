@@ -1,6 +1,6 @@
 # plant-palace
 
-PLANT PALACE
+### *PLANT PALACE*
 
 Game Design Document
 
