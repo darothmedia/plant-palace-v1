@@ -9,13 +9,15 @@ In 2020, in the midst of a global pandemic, you decided to replace the void of p
 
 ### **Overview**
 
+The game is structured like the classic “Traffic Jam” game, where you need to move cars out of the way in order to clear a path. 
+
 Your apartment is a rectangular grid. The size of your apartment will change and get progressively smaller (more difficult) as the game progresses. The levels are:
 
 * **OHIO:** Difficulty Easy. Large grid with just a tad too many plants.
 * **LA:** Difficulty Medium. More compact grid with an overabundance of plants.
 * **NYC:** Difficulty Hard. Your furniture and plants combine to take up the majority of the grid. (what floor space?!)
 
-The game is structured like the classic “Traffic Jam” game, where you need to move cars out of the way in order to clear a path. In this case, the player will be given an objective, like:
+The user will be given several objectives in each level. An objective will look like this:
 
 **I need to pee! Clear a path from the bedroom to the bathroom**
 
