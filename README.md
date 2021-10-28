@@ -1,8 +1,4 @@
-# plant-palace
-
-### *PLANT PALACE*
-
-Game Design Document
+# PLANT PALACE: JS Game
 
 
 ### **Background**
