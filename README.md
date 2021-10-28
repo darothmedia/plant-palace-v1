@@ -1,4 +1,4 @@
-# PLANT PALACE: JS Game
+# JS Game: Plant Palace
 
 ![Plant Palace Header](https://github.com/darothmedia/plant-palace/blob/main/plant-palace-logo.png "Plant Palace Logo")
 
