@@ -7,18 +7,21 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 function preload() {
   this.load.setBaseURL('./img')
-  this.load.image('sky', '/plant-palace-logo.png')
-  this.load.image('plant1', 'assets/plants/medium/plant-orange-medium.png')
-  this.load.image('plant2', 'assets/plants/medium/plant-red-medium.png')
-  this.load.image('plant3', 'assets/plants/medium/plant-yellow-medium.png')
+  this.load.image('logo', 'plant-palace-logo.png')
+  this.load.image('plant1', 'assets/plants/short/leafy-plant-short.png')
+  this.load.image('plant2', 'assets/plants/tall/man-eater-tall.png')
+  this.load.image('plant3', 'assets/plants/short/bonsai-short.png')
 }
 
 function create() {
-  // this.add.image(400, 300, 'sky')
+
+  const logo = this.add.image(400, 300, 'logo')
 
   const plant1 = this.physics.add.image(400, 100, 'plant1')
   const plant2 = this.physics.add.image(25, 50, 'plant2')
   const plant3 = this.physics.add.image(600, 50, 'plant3')
+
+  logo.scale = 0.4
 
 
   plant1.setVelocity(100, 200)
