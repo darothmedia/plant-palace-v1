@@ -50,6 +50,8 @@ In addition, this project will include:
 
 ### **Wireframes**
 
+![Wireframe 1](https://github.com/darothmedia/plant-palace/blob/main/visuals/plant-palace-wireframe.drawio.png "Wireframe 1")
+
 
 ### **Technologies, Libraries, APIs**
 
