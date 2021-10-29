@@ -9,7 +9,7 @@ In 2020, in the midst of a global pandemic, you decided to replace the void of p
 
 ### **Overview**
 
-The game is structured like the classic “Traffic Jam” game, where you need to move cars out of the way in order to clear a path. 
+The game is structured like the classic “Rush Hour” game, where you need to move cars out of the way in order to clear a path. 
 
 Your apartment is a rectangular grid. The size of your apartment will change and get progressively smaller (more difficult) as the game progresses. The levels are:
 
