@@ -23,15 +23,17 @@ function create() {
 
   logo.scale = 0.4
 
-
+  plant1.scale = 0.7
   plant1.setVelocity(100, 200)
   plant1.setBounce(1, 1)
   plant1.setCollideWorldBounds(true)
 
+  plant2.scale = 0.7
   plant2.setVelocity(50, 25)
   plant2.setBounce(1, 1)
   plant2.setCollideWorldBounds(true)
 
+  plant3.scale = 0.7
   plant3.setVelocity(100, 200)
   plant3.setBounce(1, 1)
   plant3.setCollideWorldBounds(true)
