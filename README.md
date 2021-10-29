@@ -86,5 +86,10 @@ This project will implement the following technologies:
     * Finishing touches
     * Push to production
 
+### **Bonus Features**
+* Additional difficulty levels
+* New apartment layouts
+* New objectives
+* Multiple simultaneous objectives (two people need to move around in the space)
 
 
