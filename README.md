@@ -1,6 +1,6 @@
 # JS Game: Plant Palace
 
-![Plant Palace Header](https://github.com/darothmedia/plant-palace/blob/main/visuals/plant-palace-logo.png "Plant Palace Logo")
+![Plant Palace Header](https://github.com/darothmedia/plant-palace/blob/main/img/plant-palace-logo.png "Plant Palace Logo")
 
 ### **Background**
 
@@ -50,7 +50,7 @@ In addition, this project will include:
 
 ### **Wireframes**
 
-![Wireframe 1](https://github.com/darothmedia/plant-palace/blob/main/visuals/plant-palace-wireframe.drawio.png "Wireframe 1")
+![Wireframe 1](https://github.com/darothmedia/plant-palace/blob/main/img/wires/plant-palace-wireframe.drawio.png "Wireframe 1")
 
 
 ### **Technologies, Libraries, APIs**
