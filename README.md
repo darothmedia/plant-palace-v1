@@ -63,3 +63,28 @@ This project will implement the following technologies:
 * Webpack to bundle the source JS code
 * Phaser 3 JS game framework for user input control
 
+### **Implementation Timeline**
+
+* **Friday & Weekend:** 
+    * Setup project / generate basic canvas
+    * Read Phaser documentation and begin implementation
+    * Create board, plant, human, and furniture classes
+
+* **Monday:**
+    * Work on game logic
+    * Get basic navigation on an object working
+
+* **Tuesday:**
+    * Finish game logic (1st level)
+    * Work on refining the UI
+
+* **Wednesday:**
+    * UI / game element refinement
+    * Scale 1st level to 2nd / 3rd levels (time permitting)
+
+* **Thursday:**
+    * Finishing touches
+    * Push to production
+
+
+
