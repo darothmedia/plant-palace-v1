@@ -1,4 +1,5 @@
 import Phaser, { Game } from 'phaser'
+import Grid from './scripts/grid.js'
 
 window.addEventListener('DOMContentLoaded', (event) => {
   console.log('Locked and Loaded!')
@@ -7,7 +8,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 function preload() {
   this.load.setBaseURL('./img')
-  this.load.image('logo', 'plant-palace-logo.png')
+  // this.load.image('logo', 'plant-palace-logo.png')
   this.load.image('plant1', 'assets/plants/short/leafy-plant-short.png')
   this.load.image('plant2', 'assets/plants/tall/man-eater-tall.png')
   this.load.image('plant3', 'assets/plants/short/bonsai-short.png')
@@ -15,28 +16,40 @@ function preload() {
 
 function create() {
 
-  const logo = this.add.image(400, 300, 'logo')
+  const grid = this.add.grid(400, 300, 640, 416, 32, 32, 0xFADEA8)
 
-  const plant1 = this.physics.add.image(400, 100, 'plant1')
-  const plant2 = this.physics.add.image(25, 50, 'plant2')
-  const plant3 = this.physics.add.image(600, 50, 'plant3')
+  // const logo = this.add.image(400, 30, 'logo')
 
-  logo.scale = 0.4
+  function xpos(x) { return 90 + (32 * x)}
+  function ypos(y) { return 80 + (32 * y)}
+  function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+  }
 
-  plant1.scale = 0.7
-  plant1.setVelocity(100, 200)
-  plant1.setBounce(1, 1)
-  plant1.setCollideWorldBounds(true)
+  // for(leti=0;i<45;i++) {
+  //   this.add.image(xpos(getRandomInt(10)), ypos(getRandomInt(10)))
+  // }
 
-  plant2.scale = 0.7
-  plant2.setVelocity(50, 25)
-  plant2.setBounce(1, 1)
-  plant2.setCollideWorldBounds(true)
+  const plant1 = this.add.image(xpos(getRandomInt(10)), ypos(getRandomInt(10)), 'plant1')
+  const plant2 = this.add.image(xpos(getRandomInt(10)), ypos(getRandomInt(10)), 'plant2')
+  const plant3 = this.add.image(xpos(getRandomInt(10)), ypos(getRandomInt(10)), 'plant3')
 
-  plant3.scale = 0.7
-  plant3.setVelocity(100, 200)
-  plant3.setBounce(1, 1)
-  plant3.setCollideWorldBounds(true)
+  // logo.scale = 0.4
+
+  plant1.scale = 0.3
+  // plant1.setVelocity(100, 200)
+  // plant1.setBounce(1, 1)
+  // plant1.setCollideWorldBounds(true)
+
+  plant2.scale = 0.3
+  // plant2.setVelocity(50, 25)
+  // plant2.setBounce(1, 1)
+  // plant2.setCollideWorldBounds(true)
+
+  plant3.scale = 0.3
+  // plant3.setVelocity(100, 200)
+  // plant3.setBounce(1, 1)
+  // plant3.setCollideWorldBounds(true)
 
   // emitter.startFollow(logo)
 }
@@ -45,6 +58,7 @@ const config = {
   type: Phaser.AUTO,
   width: 800,
   height: 600,
+  backgroundColor: '#4488aa',
   physics: {
     default: 'arcade',
     arcade: {
