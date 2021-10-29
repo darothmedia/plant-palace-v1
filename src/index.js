@@ -8,17 +8,30 @@ window.addEventListener('DOMContentLoaded', (event) => {
 function preload() {
   this.load.setBaseURL('./img')
   this.load.image('sky', '/plant-palace-logo.png')
-  this.load.image('logo', 'assets/plants/medium/plant-orange-medium.png')
+  this.load.image('plant1', 'assets/plants/medium/plant-orange-medium.png')
+  this.load.image('plant2', 'assets/plants/medium/plant-red-medium.png')
+  this.load.image('plant3', 'assets/plants/medium/plant-yellow-medium.png')
 }
 
 function create() {
   // this.add.image(400, 300, 'sky')
 
-  const logo = this.physics.add.image(400, 100, 'logo')
+  const plant1 = this.physics.add.image(400, 100, 'plant1')
+  const plant2 = this.physics.add.image(25, 50, 'plant2')
+  const plant3 = this.physics.add.image(600, 50, 'plant3')
 
-  logo.setVelocity(100, 200)
-  logo.setBounce(1, 2)
-  logo.setCollideWorldBounds(false)
+
+  plant1.setVelocity(100, 200)
+  plant1.setBounce(1, 1)
+  plant1.setCollideWorldBounds(true)
+
+  plant2.setVelocity(50, 25)
+  plant2.setBounce(1, 1)
+  plant2.setCollideWorldBounds(true)
+
+  plant3.setVelocity(100, 200)
+  plant3.setBounce(1, 1)
+  plant3.setCollideWorldBounds(true)
 
   // emitter.startFollow(logo)
 }
@@ -39,4 +52,4 @@ const config = {
   }
 }
 
-new Phaser.Game(config)
+const game = new Phaser.Game(config)
