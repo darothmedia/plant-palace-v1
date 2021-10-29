@@ -52,13 +52,25 @@ function create() {
   // plant3.setCollideWorldBounds(true)
 
   // emitter.startFollow(logo)
+
+  this.tweens.add({
+
+    targets: [plant1, plant2, plant3],
+    // scaleX: 0.32,
+    // scaleY: 0.32,
+    angle: 5,
+    yoyo: true,
+    repeat: -1,
+    ease: 'Sine.easeInOut'
+
+  });
 }
 
 const config = {
   type: Phaser.AUTO,
   width: 800,
   height: 600,
-  backgroundColor: '#4488aa',
+  backgroundColor: '#A69EB0',
   physics: {
     default: 'arcade',
     arcade: {
