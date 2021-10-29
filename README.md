@@ -1,6 +1,6 @@
 # JS Game: Plant Palace
 
-![Plant Palace Header](https://github.com/darothmedia/plant-palace/blob/main/plant-palace-logo.png "Plant Palace Logo")
+![Plant Palace Header](https://github.com/darothmedia/plant-palace/blob/main/visuals/plant-palace-logo.png "Plant Palace Logo")
 
 ### **Background**
 
