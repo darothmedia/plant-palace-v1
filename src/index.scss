@@ -2,6 +2,9 @@ canvas {
   padding: 0;
   margin: 0 auto;
   display: block;
+  border-style:groove;
+  border-color: darkgreen;
+  border-width: 10px;
 }
 
 header img {
@@ -10,8 +13,13 @@ header img {
   display: block;
 }
 
+header {
+  height: 50px;
+}
+
 html {
-  background: url(../img/bg/building_bg.png) no-repeat center center fixed;
+  background-color: #555d50;
+  background: url(../img/bg/plant-bg.png) no-repeat center center fixed;
   background-size: cover;
   height: 100%;
   overflow: hidden;

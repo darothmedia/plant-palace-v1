@@ -11,8 +11,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
 const config = {
   type: Phaser.AUTO,
   width: 950,
-  height: 575,
-  backgroundColor: '#F7EEDE',
+  height: 600,
+  backgroundColor: '#41633D',
   // pixelArt: true,
   global: [
     { key: 'MovingObjectPlugin', plugin: MovingObjectPlugin, start: true }
@@ -27,6 +27,7 @@ const game = new Phaser.Game(config)
 
 function preload() {
   this.load.setBaseURL('./img')
+  this.load.image('logo', '/assets/pp-game-logo.png')
   this.load.image('level1', 'bg/level-1.png')
   this.load.image('plant1', 'assets/plants/short/leafy-plant-short.png')
   this.load.image('plant2', 'assets/plants/tall/man-eater-tall.png')
@@ -38,11 +39,12 @@ function create() {
 
   
 
-  const bg = this.add.image(400, 300, 'level1')
-  const grid = this.add.grid(400, 300, 640, 416, 32, 32, 0xFADEA8)
+  const bg = this.add.image(390, 340, 'level1')
+  const grid = this.add.grid(390, 340, 640, 416, 32, 32, 0xFADEA8)
+  const logo = this.add.image(390, 58, 'logo')
 
-  function xpos(x) { return 90 + (32 * x) }
-  function ypos(y) { return 80 + (32 * y) }
+  function xpos(x) { return 80 + (32 * x) }
+  function ypos(y) { return 120 + (32 * y) }
   function getRandomInt(max) {
     return Math.floor(Math.random() * max);
   }
@@ -52,7 +54,11 @@ function create() {
   const plant2 = this.add.image(xpos(getRandomInt(20)), ypos(getRandomInt(13)), 'plant2')
   const plant3 = this.add.image(xpos(getRandomInt(20)), ypos(getRandomInt(13)), 'plant3')
 
+  // const title = this.add.text(300, 25, 'Plant Palace', 50)
+
+  // title.fontSize = 50
   bg.scale = 1
+  logo.scale = 0.3
   grid.fillAlpha = 0
   grid.outlineFillColor = "#F7EEDE"
   grid.outlineFillAlpha = 0.2
