@@ -10,9 +10,9 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 const config = {
   type: Phaser.AUTO,
-  width: 800,
-  height: 600,
-  backgroundColor: '#A69EB0',
+  width: 950,
+  height: 575,
+  backgroundColor: '#F7EEDE',
   // pixelArt: true,
   global: [
     { key: 'MovingObjectPlugin', plugin: MovingObjectPlugin, start: true }
@@ -48,9 +48,9 @@ function create() {
   }
 
   // const mo = this.add.GameObject.Image(xpos(getRandomInt(10)), ypos(getRandomInt(10)), 'MovingObject')
-  const plant1 = this.add.image(xpos(getRandomInt(10)), ypos(getRandomInt(10)), 'plant1')
-  const plant2 = this.add.image(xpos(getRandomInt(10)), ypos(getRandomInt(10)), 'plant2')
-  const plant3 = this.add.image(xpos(getRandomInt(10)), ypos(getRandomInt(10)), 'plant3')
+  const plant1 = this.add.image(xpos(getRandomInt(20)), ypos(getRandomInt(13)), 'plant1')
+  const plant2 = this.add.image(xpos(getRandomInt(20)), ypos(getRandomInt(13)), 'plant2')
+  const plant3 = this.add.image(xpos(getRandomInt(20)), ypos(getRandomInt(13)), 'plant3')
 
   bg.scale = 1
   grid.fillAlpha = 0
