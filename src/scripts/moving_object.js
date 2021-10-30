@@ -1,11 +1,9 @@
+import Phaser, {GameObjects, Plugins} from 'phaser'
 
-class MovingObject extends GameObject {
-  constructor (options) {
-    this.gridPos = options['gridPos'];
-    this.avatar = options['avatar'];
-    this.scale = options['scale']
-    this.game = options['game'];
-    this.movement = options['movement']
+class MovingObject extends Phaser.GameObjects.Image {
+  constructor (scene, x, y) {
+    super(scene, x, y, 'MovingObject')
+    this.setScale(0.3)
   }
 
   move() {
@@ -15,4 +13,18 @@ class MovingObject extends GameObject {
     ];
   }
 }
-export {MovingObject as MO}
+
+class MovingObjectPlugin extends Phaser.Plugins.BasePlugin {
+
+  constructor(pluginManager) {
+    super(pluginManager);
+    pluginManager.registerGameObject('MovingObject', this.createMovingObject);
+  }
+
+  createMovingObject(x, y) {
+    return this.displayList.add(new MovingObject(this.scene, x, y));
+  }
+
+}
+export {MovingObject}
+export {MovingObjectPlugin}
