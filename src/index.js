@@ -12,7 +12,7 @@ const config = {
   type: Phaser.AUTO,
   width: 950,
   height: 600,
-  backgroundColor: '#41633D',
+  backgroundColor: '#7C877B',
   // pixelArt: true,
   global: [
     { key: 'MovingObjectPlugin', plugin: MovingObjectPlugin, start: true }
@@ -29,6 +29,7 @@ function preload() {
   this.load.setBaseURL('./img')
   this.load.image('logo', '/assets/pp-game-logo.png')
   this.load.image('level1', 'bg/level-1.png')
+  this.load.image('shadow', 'bg/level-1-shadow.png')
   this.load.image('plant1', 'assets/plants/short/leafy-plant-short.png')
   this.load.image('plant2', 'assets/plants/tall/man-eater-tall.png')
   this.load.image('plant3', 'assets/plants/short/bonsai-short.png')
@@ -37,11 +38,11 @@ function preload() {
 
 function create() {
 
-  
-
+  const shadow = this.add.image(390, 340, 'shadow')
   const bg = this.add.image(390, 340, 'level1')
+  
   const grid = this.add.grid(390, 340, 640, 416, 32, 32, 0xFADEA8)
-  const logo = this.add.image(390, 58, 'logo')
+  const logo = this.add.image(390, 75, 'logo')
 
   function xpos(x) { return 80 + (32 * x) }
   function ypos(y) { return 120 + (32 * y) }
@@ -60,8 +61,8 @@ function create() {
   bg.scale = 1
   logo.scale = 0.3
   grid.fillAlpha = 0
-  grid.outlineFillColor = "#F7EEDE"
-  grid.outlineFillAlpha = 0.2
+  grid.outlineFillColor = "#7C877B"
+  grid.outlineFillAlpha = 0.12
 
   plant1.scale = 0.3
 
