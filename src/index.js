@@ -67,7 +67,7 @@ const plants = ['plant1', 'plant2', 'plant3']
 var plantloc = []
 
 function create() {
-  this.physics.world.setBounds(55, 70, 670, 480)
+  this.physics.world.setBounds(70, 105, 640, 440)
   
   this.add.image(390, 340, 'level1')
   this.add.image(880, 340, 'sidePanel')
@@ -82,17 +82,17 @@ function create() {
 
   map = this.make.tilemap({key: 'map', tileWidth: 32, tileHeight: 32})
   tileset = map.addTilesetImage('tiles', null, 32, 32, 1)
-  layer = map.createLayer(0, tileset, 0, 0)
+  layer = map.createLayer(0, tileset, 5, 5)
 
-  layer.setCollisionByProperty({collides: true})
+  // layer.setCollisionByProperty({collides: true})
 
   // wall1 = new StaticObject(this, 165, 308, 'wall1')
   // wall2 = new StaticObject(this, 260, 405, 'wall2')
   // wall3 = new StaticObject(this, 343, 228, 'wall3')
   // wall1.setCollisionBetween(54, 83)
 
-  function xpos(x) { return 80 + (32 * x) }
-  function ypos(y) { return 120 + (32 * y) }
+  function xpos(x) { return 85 + (32 * x) }
+  function ypos(y) { return 135 + (32 * y) }
   function getRandomInt(max) {
     return Math.floor(Math.random() * max);
   }
