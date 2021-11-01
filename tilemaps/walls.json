@@ -1,0 +1,14 @@
+{ "columns":20,
+ "image":"..\/img\/assets\/bg\/lvl1-walls.png",
+ "imageheight":417,
+ "imagewidth":641,
+ "margin":0,
+ "name":"walls",
+ "spacing":0,
+ "tilecount":260,
+ "tiledversion":"1.7.2",
+ "tileheight":32,
+ "tilewidth":32,
+ "type":"tileset",
+ "version":"1.6"
+}
