@@ -58,6 +58,7 @@ var wall1;
 var wall2;
 var wall3;
 var plant;
+const plants = ['plant1', 'plant2', 'plant3']
 
 function create() {
   this.physics.world.setBounds(55, 70, 670, 480)
@@ -84,18 +85,8 @@ function create() {
     return Math.floor(Math.random() * max);
   }
 
-  for (let i = 0; i < 10; i++) {
-    plant = new Plant(this, xpos(getRandomInt(20)), ypos(getRandomInt(13)), 'plant1')
-    plant.body.collideWorldBounds = true;
-  }
-
-  for (let i = 0; i < 10; i++) {
-    plant = new Plant(this, xpos(getRandomInt(20)), ypos(getRandomInt(13)), 'plant3')
-    plant.body.collideWorldBounds = true;
-  }
-
-  for (let i = 0; i < 10; i++) {
-    plant = new Plant(this, xpos(getRandomInt(20)), ypos(getRandomInt(13)), 'plant2')
+  for (let i = 0; i < 15; i++) {
+    plant = new Plant(this, xpos(getRandomInt(20)), ypos(getRandomInt(13)), plants[getRandomInt(3)])
     plant.body.collideWorldBounds = true;
   }
 
