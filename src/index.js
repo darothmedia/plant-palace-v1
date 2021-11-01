@@ -57,7 +57,6 @@ var wall2;
 var wall3;
 
 function create() {
-
   this.physics.world.setBounds(55, 70, 670, 480)
   
 
@@ -74,8 +73,12 @@ function create() {
   logo.scale = 0.3
 
   wall1 = this.physics.add.sprite(165, 308, 'wall1')
+  wall1.body.immovable = true;
+
   wall2 = this.physics.add.sprite(260, 405, 'wall2')
+  wall2.body.immovable = true;
   wall3 = this.physics.add.sprite(343, 228, 'wall3')
+  wall3.body.immovable = true;
   // wall1.setCollisionBetween(54, 83)
 
   function xpos(x) { return 80 + (32 * x) }
@@ -88,13 +91,10 @@ function create() {
   plant1.scale = 0.3
 
   cursors = this.input.keyboard.createCursorKeys();
-  plant1.setCollideWorldBounds()
+  plant1.body.collideWorldBounds = true;
 }
 
 function update() {
-
-  // plant1.enableBody = true;
-  // plant1.body.immovable = true;
 
   if (cursors.up.isDown)
     plant1.y -= 6;
