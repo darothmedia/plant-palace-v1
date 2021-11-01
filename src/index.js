@@ -14,10 +14,10 @@ const config = {
     default: 'arcade',
     arcade: {
       gravity: { y: 0 },
-      debug: true
+      debug: false
     }
   },
-  backgroundColor: '#747B75',
+  backgroundColor: '#404040',
   scene: {
     preload: preload,
     create: create,
@@ -48,6 +48,8 @@ function preload() {
   this.load.image('plant3', '/plants/short/bonsai-short.png')
   // this.load.image('tiles', '/bg/lvl1-walls.png')
   // this.load.image('walls', '/bg/lvl1-walls.png')
+  this.load.tilemapCSV('map', '/tilemaps/level1.csv')
+  this.load.image('tiles', '/bg/floorplan-elements.png')
   this.load.image('wall1', '/furniture/walls/wall-h-1.png')
   this.load.image('wall2', '/furniture/walls/wall-h-2.png')
   this.load.image('wall3', '/furniture/walls/wall-v-1.png')
@@ -58,7 +60,11 @@ var wall1;
 var wall2;
 var wall3;
 var plant;
+var map;
+var tileset;
+var layer;
 const plants = ['plant1', 'plant2', 'plant3']
+var plantloc = []
 
 function create() {
   this.physics.world.setBounds(55, 70, 670, 480)
@@ -74,9 +80,15 @@ function create() {
   const logo = this.add.image(390, 75, 'logo')
   logo.scale = 0.3
 
-  wall1 = new StaticObject(this, 165, 308, 'wall1')
-  wall2 = new StaticObject(this, 260, 405, 'wall2')
-  wall3 = new StaticObject(this, 343, 228, 'wall3')
+  map = this.make.tilemap({key: 'map', tileWidth: 32, tileHeight: 32})
+  tileset = map.addTilesetImage('tiles', null, 32, 32, 1)
+  layer = map.createLayer(0, tileset, 0, 0)
+
+  layer.setCollisionByProperty({collides: true})
+
+  // wall1 = new StaticObject(this, 165, 308, 'wall1')
+  // wall2 = new StaticObject(this, 260, 405, 'wall2')
+  // wall3 = new StaticObject(this, 343, 228, 'wall3')
   // wall1.setCollisionBetween(54, 83)
 
   function xpos(x) { return 80 + (32 * x) }
@@ -86,24 +98,48 @@ function create() {
   }
 
   for (let i = 0; i < 15; i++) {
-    plant = new Plant(this, xpos(getRandomInt(20)), ypos(getRandomInt(13)), plants[getRandomInt(3)])
+    let xx = xpos(getRandomInt(20))
+    let yy = ypos(getRandomInt(13))
+    while (plantloc.includes([xx,yy])) {
+      xx = xpos(getRandomInt(20))
+      yy = ypos(getRandomInt(13))
+    }
+    let plantindex = plants[getRandomInt(3)]
+
+    plant = new Plant(this, xx, yy, plantindex)
+    plantloc.push([plant.x, plant.y])
     plant.body.collideWorldBounds = true;
   }
 
   cursors = this.input.keyboard.createCursorKeys();
 }
-
 function update() {
-
-  if (cursors.up.isDown)
-    plant.y -= 6;
-  if (cursors.down.isDown)
-    plant.y += 6;
-  if (cursors.left.isDown)
-    plant.x -= 6;
-  if (cursors.right.isDown)
-    plant.x += 6;
-  this.physics.collide(wall1, plant1);
+  if (cursors.up.isDown) {
+    var tile = layer.getTileAtWorldXY(plant.x, plant.y - 32, true)
+    if (tile.index > 0) {}
+    else { plant.y -= 6}
+    
+  }
+  else if (cursors.down.isDown) {
+    var tile = layer.getTileAtWorldXY(plant.x, plant.y + 32, true)
+    if (tile.index > 0) { }
+    else {plant.y += 6}
+  }
+    
+  else if (cursors.left.isDown) {
+    var tile = layer.getTileAtWorldXY(plant.x - 32, plant.y, true)
+    if (tile.index > 0) { }
+    else {plant.x -= 6}
+  }
+    
+  else if (cursors.right.isDown) {
+    var tile = layer.getTileAtWorldXY(plant.x + 32, plant.y, true)
+    if (tile.index > 0) { }
+    else {plant.x += 6}
+  }
+    
+  plant.update();
+  // this.physics.collide(wall1, plant1);
 };
 
 // function startDrag(targets) {

@@ -8,6 +8,10 @@ class MovingObject extends Phaser.GameObjects.Sprite {
     this.type = type
     this.textureKey = textureKey
   }
+
+  update() {
+  
+  }
 }
 
 export {MovingObject}

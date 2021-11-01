@@ -8,14 +8,14 @@ class Plant extends MovingObject {
   }
 
   update() {
-    if (cursors.up.isDown)
-      this.y -= 6;
-    if (cursors.down.isDown)
-      this.y += 6;
-    if (cursors.left.isDown)
-      this.x -= 6;
-    if (cursors.right.isDown)
-      this.x += 6;
+    // if (cursors.up.isDown)
+    //   this.y -= 6;
+    // if (cursors.down.isDown)
+    //   this.y += 6;
+    // if (cursors.left.isDown)
+    //   this.x -= 6;
+    // if (cursors.right.isDown)
+    //   this.x += 6;
   }
 }
 
