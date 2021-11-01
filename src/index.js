@@ -1,4 +1,6 @@
 import Phaser from 'phaser'
+import {StaticObject} from './scripts/static_object.js'
+import { Plant } from './scripts/plant.js'
 // import './scripts/phaser.min.js'
 
 window.addEventListener('DOMContentLoaded', (event) => {
@@ -55,11 +57,11 @@ var cursors;
 var wall1;
 var wall2;
 var wall3;
+var plant;
 
 function create() {
   this.physics.world.setBounds(55, 70, 670, 480)
   
-
   this.add.image(390, 340, 'level1')
   this.add.image(880, 340, 'sidePanel')
 
@@ -68,17 +70,12 @@ function create() {
   grid.outlineFillColor = "#7C877B"
   grid.outlineFillAlpha = 0.12
 
-
   const logo = this.add.image(390, 75, 'logo')
   logo.scale = 0.3
 
-  wall1 = this.physics.add.sprite(165, 308, 'wall1')
-  wall1.body.immovable = true;
-
-  wall2 = this.physics.add.sprite(260, 405, 'wall2')
-  wall2.body.immovable = true;
-  wall3 = this.physics.add.sprite(343, 228, 'wall3')
-  wall3.body.immovable = true;
+  wall1 = new StaticObject(this, 165, 308, 'wall1')
+  wall2 = new StaticObject(this, 260, 405, 'wall2')
+  wall3 = new StaticObject(this, 343, 228, 'wall3')
   // wall1.setCollisionBetween(54, 83)
 
   function xpos(x) { return 80 + (32 * x) }
@@ -87,23 +84,34 @@ function create() {
     return Math.floor(Math.random() * max);
   }
 
-  plant1 = this.physics.add.sprite(xpos(getRandomInt(20)), ypos(getRandomInt(13)), 'plant2', 1)
-  plant1.scale = 0.3
+  for (let i = 0; i < 10; i++) {
+    plant = new Plant(this, xpos(getRandomInt(20)), ypos(getRandomInt(13)), 'plant1')
+    plant.body.collideWorldBounds = true;
+  }
+
+  for (let i = 0; i < 10; i++) {
+    plant = new Plant(this, xpos(getRandomInt(20)), ypos(getRandomInt(13)), 'plant3')
+    plant.body.collideWorldBounds = true;
+  }
+
+  for (let i = 0; i < 10; i++) {
+    plant = new Plant(this, xpos(getRandomInt(20)), ypos(getRandomInt(13)), 'plant2')
+    plant.body.collideWorldBounds = true;
+  }
 
   cursors = this.input.keyboard.createCursorKeys();
-  plant1.body.collideWorldBounds = true;
 }
 
 function update() {
 
   if (cursors.up.isDown)
-    plant1.y -= 6;
+    plant.y -= 6;
   if (cursors.down.isDown)
-    plant1.y += 6;
+    plant.y += 6;
   if (cursors.left.isDown)
-    plant1.x -= 6;
+    plant.x -= 6;
   if (cursors.right.isDown)
-    plant1.x += 6;
+    plant.x += 6;
   this.physics.collide(wall1, plant1);
 };
 
