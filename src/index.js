@@ -1,5 +1,5 @@
 import Phaser from 'phaser'
-import {StaticObject} from './scripts/static_object.js'
+import { StaticObject } from './scripts/static_object.js'
 import { Plant } from './scripts/plant.js'
 // import './scripts/phaser.min.js'
 
